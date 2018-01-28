@@ -9,7 +9,7 @@ To use this with OpenShift, it is a simple matter of creating a new application 
 As an example, to build and host a simple site with you only need run:
 
 ```
-oc new-app getwarped/s2i-httpd-server~https://github.com/getwarped/httpd-site-maintenance --name site-maintenance
+oc new-app flannon/s2i-httpd-server~https://github.com/flannon/httpd-site-maintenance --name site-maintenance
 
 oc expose svc/site-maintenance
 ```
@@ -23,7 +23,7 @@ The repository used with the builder can host any static files assets, including
 To make it easier to deploy a static web site a template for OpenShift is also included. This can be loaded into your project using:
 
 ```
-oc create -f https://raw.githubusercontent.com/getwarped/s2i-httpd-server/master/template.json
+oc create -f https://raw.githubusercontent.com/flannon/s2i-httpd-server/master/template.json
 ```
 
 Once loaded, select the ``httpd-server`` template from the web console when wanting to add a new site to the project.
@@ -68,7 +68,7 @@ The ``APPLICATION_NAME`` and ``SOURCE_REPOSITORY`` must be specified.
 To create a standalone Docker-formatted image, you need to [install](https://github.com/openshift/source-to-image/releases) the ``s2i`` program from the Source-to-Image (S2I) project locally. Once you have this installed, you would run within your Git repository:
 
 ```
-s2i build . getwarped/s2i-httpd-server myhttpdsite
+s2i build . flannon/s2i-httpd-server myhttpdsite
 ```
 
 In this case this will create a Docker-formatted image called ``myhttpdsite``. You can then run the image using:

@@ -34,7 +34,7 @@
                         "name": "latest",
                         "from": {
                             "kind": "DockerImage",
-                            "name": "getwarped/s2i-httpd-server:latest"
+                            "name": "flannon/s2i-httpd-server:latest"
                         }
                     }
                 ]
